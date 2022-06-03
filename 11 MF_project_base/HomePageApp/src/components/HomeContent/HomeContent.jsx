@@ -27,9 +27,7 @@ const HomeContent = (props) => {
     let items = movies.map((item) => {
       return (
         <div onClick={() => movieClicked(item)} key={item.name}>
-          <Suspense fallback={null}>
             <MovieCard title={item.name} imageUrl={item.imageUrl}/>
-          </Suspense>
         </div>
       );
     });
@@ -41,7 +39,9 @@ const HomeContent = (props) => {
     <div className="home-content-container">
       <QuickBooking></QuickBooking>
       <div className="movies-container">
-        {renderMovieList()}
+        <Suspense fallback={null}>
+          {renderMovieList()}
+        </Suspense>
       </div>
     </div>
   );
