@@ -25,6 +25,10 @@ module.exports = {
         "./MovieCard":"./src/components/MovieCard/MovieCard.jsx",
         "./BuyButton":"./src/components/Button/BuyButton/BuyButton.jsx",
         "./GlitchButton":"./src/components/Button/Glitch/Glitch.jsx",
+        "./SimpleButton":"./src/components/Button/SimpleButton/SimpleButton.jsx",
+        "./Snow":"./src/components/Button/Snow/Snow.jsx",
+        "./DropDown":"./src/components/DropDown/DropDown.jsx",
+        "./Typography":"./src/components/Typography/Typography.jsx",
       }
     }),
     new MiniCssExtractPlugin(),
