@@ -1,7 +1,7 @@
 .list-container {
   display: flex;
   flex-direction: column;
-  // background: grey;
+  background: grey;
   align-items: flex-start;
   padding: 20px;
 }
@@ -28,9 +28,9 @@
   width: 1px;
 }
 
-// *::-webkit-scrollbar-track {
-//   background: orange;
-// }
+*::-webkit-scrollbar-track {
+  background: orange;
+}
 
 *::-webkit-scrollbar-thumb {
   background-color: rgb(57, 56, 56);
