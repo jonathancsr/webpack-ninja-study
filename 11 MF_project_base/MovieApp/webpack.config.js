@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const {ModuleFederationPlugin} = require("webpack").container;
 
 module.exports = {
   mode: "development",
@@ -64,6 +65,16 @@ module.exports = {
     ],
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: "movieapp",
+      filename: "remoteEntry.js",
+      remotes:{
+        homepage: "home@http://localhost:3000/remoteEntry.js",
+        detailspage: "details@http://localhost:3001/remoteEntry.js",
+        seatpage: "seatselection@http://localhost:3003/remoteEntry.js",
+      },
+      shared: ["react", "react-dom"],
+    }),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",

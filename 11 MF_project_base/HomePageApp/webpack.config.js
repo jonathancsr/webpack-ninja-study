@@ -19,11 +19,15 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "HomePageApp",
+      name: "home",
       filename: "remoteEntry.js",
       remotes: {
         components: "components@http://localhost:3002/remoteEntry.js",
       },
+      exposes: {
+        "./HomePage": "./src/components/HomeContent/HomeContent.jsx",
+      },
+      shared: ["react", "react-dom"],
     }),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
