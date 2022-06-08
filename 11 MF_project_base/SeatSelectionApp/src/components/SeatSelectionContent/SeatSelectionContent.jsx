@@ -26,6 +26,19 @@ const SeatSelectionContent = () => {
     });
   };
 
+  useEffect(() => {
+    import("movieapp/MovieData").then((module) => {
+      const movieData = module.default;
+      movieData.subscribe({
+        
+        next: (value) => {
+          console.log(`Movie data received id`,value)
+          loadBooking(value)
+        }
+      });
+    });
+  },[])
+
   const renderImage = () => {
     const imgUrl = `http://localhost:5555/images/${bookingData.imageUrl}`;
     return <img src={imgUrl}></img>;

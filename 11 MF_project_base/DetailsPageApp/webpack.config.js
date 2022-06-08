@@ -22,6 +22,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "details",
       filename: "remoteEntry.js",
+      remotes:{
+        movieapp: "movieapp@http://localhost:9000/remoteEntry.js",
+      },
       exposes: {
         "./DetailsPage": "./src/components/DetailsContent/DetailsContent.jsx",
       },

@@ -17,12 +17,16 @@ const App = () => {
     <Switch>
       <Route path="/details/:id">
       <Suspense fallback={null}>
-        <DetailsPage location={location} />
+        <DetailsPage 
+         routing={{ history, location }}
+        />
       </Suspense>
       </Route>
       <Route path="/book">
       <Suspense fallback={null}>
-        <SeatSelectionPage />
+        <SeatSelectionPage 
+         routing={{ history, location }}
+        />
       </Suspense>
       </Route>
       <Route path="/">

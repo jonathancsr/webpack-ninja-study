@@ -21,6 +21,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "seatselection",
       filename: "remoteEntry.js",
+      remotes:{
+        movieapp: "movieapp@http://localhost:9000/remoteEntry.js",
+      },
       exposes: {
         "./SeatSelection": "./src/components/SeatSelectionContent/SeatSelectionContent.jsx",
       },
