@@ -1,8 +1,8 @@
 import React, { Suspense, useEffect, useState } from "react";
 import QuickBooking from "../QuickBooking/QuickBooking.jsx";
-const MovieCard = React.lazy(()=> import("components/MovieCard"));
 import "./HomeContent.scss";
 import RoutingContext from "../../utils/RoutingProvider";
+const MovieCard = React.lazy(()=> import("components/MovieCard"));
 
 
 const dummyItem = [{name:"Dummy Movie"}]
